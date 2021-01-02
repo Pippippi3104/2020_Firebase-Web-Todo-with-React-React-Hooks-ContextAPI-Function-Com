@@ -30,5 +30,8 @@
   npm install --save bootstrap
   npm install --save react react-dom
   ```
+  ```
+  npm run start
+  ```
 
 ### [Return to Contents](#contents)

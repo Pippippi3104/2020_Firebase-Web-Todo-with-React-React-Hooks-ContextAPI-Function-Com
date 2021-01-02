@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Form, InputGroup, Input, InputGroupAddon, Button } from "reactstrap";
 
 function App() {
+  const [value, setValue] = useState("")
+  const [todos, setTodos] = useState([])
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(value)
+    addTodo(value)
+  }
+
+  const addTodo = text => {
+    const newTodos = [...todos, text]
+    setTodos(newTodos)
+    console.log(newTodos)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <h1 className="mt-4">Todo リスト</h1>
+        <Form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Input 
+              type="text"
+              value={value}
+              onChange={e => setValue(e.target.value)}
+            />
+            <InputGroupAddon addonType="append">
+              <Button type="submit" color="primary">追加</Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </Form>
+      </Container>
     </div>
   );
 }
