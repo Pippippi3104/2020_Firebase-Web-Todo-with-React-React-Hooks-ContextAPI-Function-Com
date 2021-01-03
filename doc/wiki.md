@@ -7,7 +7,7 @@
 * Section04: グローバルステート管理
 
 ### Pickup
-* [完成ページ](react-firebase-hosting-779d2.web.app)
+* [完成ページ](https://react-firebase-hosting-779d2.web.app/)
 
 ### How to
 * 
