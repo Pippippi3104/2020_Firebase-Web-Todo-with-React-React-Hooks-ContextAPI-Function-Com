@@ -7,7 +7,7 @@
 * [BootStrap](#BootStrap)
 
 ### Pickup
-* 
+* [Array.prototype.splice()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 
 
 <a id = "flow">
