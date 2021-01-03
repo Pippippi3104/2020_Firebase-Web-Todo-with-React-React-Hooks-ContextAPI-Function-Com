@@ -1,0 +1,31 @@
+import React, { useState, useContext } from 'react'
+import { Form, InputGroup, Input, InputGroupAddon, Button } from "reactstrap";
+import { TodosContext } from "../contexts/TodosContext";
+
+function TodoForm() {
+    const { addTodo } = useContext(TodosContext)
+    const [value, setValue] = useState("")
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(value)
+        addTodo(value)
+      }
+
+    return (
+        <Form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Input 
+              type="text"
+              value={value}
+              onChange={e => setValue(e.target.value)}
+            />
+            <InputGroupAddon addonType="append">
+              <Button type="submit" color="primary">追加</Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </Form>
+    )
+}
+
+export default TodoForm
